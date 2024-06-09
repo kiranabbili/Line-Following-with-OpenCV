@@ -37,6 +37,26 @@ class ImageSubscriber(Node):
         cv2.imshow("Blue Segmented Image", blue_segmented_image)
         cv2.waitKey(1)
 
+def get_contour_data(self,mask):
+
+    MIN_AREA_TRACK=50
+
+    contours,_ =cv2.findContours(mask,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_NONE)
+
+    line={}
+
+    for contour in contours:
+        M=cv2.moments(contour)
+
+        if (M['m00']>MIN_AREA_TRACK):
+            
+
+
+        line['x']
+
+
+    
+
 def main(args=None):
     rclpy.init(args=args)
     image_subscriber = ImageSubscriber()
