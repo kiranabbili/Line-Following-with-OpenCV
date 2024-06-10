@@ -42,6 +42,9 @@ class ImageSubscriber(Node):
 
         cmd=Twist()
         _,width,_=blue_segmented_image.shape
+
+        error=0
+        
         if line:
             x=line['x']
             error=x-width//2
