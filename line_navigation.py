@@ -49,7 +49,7 @@ class ImageSubscriber(Node):
             x=line['x']
             error=x-width//2
             cmd.linear.x=LINEAR_SPEED
-            cv2.circle(blue_segmented_image,(line['x'],line['y'],5,(0,0,255),7))
+            cv2.circle(blue_segmented_image, (line['x'], line['y']), 5, (0, 0, 255), 7)
 
         cmd.angular.z=float(error)* -KP
         print("error: {} | Angular z: {}," .format(error,cmd.angular.z))
